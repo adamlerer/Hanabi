@@ -21,9 +21,9 @@ struct Statistics {
     int mulligansUsed[4];
 };
 
+const int iterations = 100000;
 double run(int numberOfPlayers)
 {
-    const int iterations = 2000;
     Hanabi::Server server;
     BotFactory<BOTNAME> botFactory;
     Statistics local_stats = {};
@@ -52,11 +52,9 @@ int TesterA = 42;
 
 int main()
 {
-    for (TesterA = 0; TesterA <= 1; ++TesterA) {
-        double two = run(2);
-        double three = run(3);
-        double four = run(4);
-        double five = run(5);
-        printf("%d: %8.3f %8.3f %8.3f %8.3f\n", TesterA, two, three, four, five);
-    }
+    double two = run(2);
+    // double three = run(3);
+    // double four = run(4);
+    // double five = run(5);
+    printf("%d games: %8.3f \n", iterations, two);
 }
